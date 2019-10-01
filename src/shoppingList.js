@@ -5,7 +5,7 @@ const reducer = (state, action) => {
     case "add":
       return [...state, { id: state.length, name: action.name }];
     case "remove":
-      return [];
+      return state.filter((_, index) => index !== action.index);
 
     default:
       return state;
