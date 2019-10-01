@@ -1,10 +1,6 @@
 import ReactDOM from "react-dom";
 import React, { useRef, useReducer } from "react";
-import "./styles.css";
-
-function App() {
-  return <div className="App" />;
-}
+import App from "./app";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
