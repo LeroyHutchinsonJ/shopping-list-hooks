@@ -5,7 +5,10 @@ const reducer = (state, action) => {
     case "add":
       return [...state, { id: state.length, name: action.name }];
     case "remove":
-      return state.filter((_, index) => index !== action.index);
+      return state.filter((_,index) => index !== action.index);
+    case "clear":
+    return [];
+   
 
     default:
       return state;
@@ -31,6 +34,9 @@ export default function ShoppingList() {
       <form onSubmit={handleSubmit}>
         <input ref={inputRef} />
       </form>
+       <button onClick = {() => dispatch({type: "clear"})}>
+            Clear
+            </button>
       <ul>
         {items.map((item, index) => (
           <li key={item.id}>
@@ -39,6 +45,7 @@ export default function ShoppingList() {
               {" "}
               X{" "}
             </button>
+            
           </li>
         ))}
       </ul>
